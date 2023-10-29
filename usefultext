@@ -1,0 +1,4 @@
+ffmpeg -i input_video.mp4 -vf "subtitles=subtitles.srt:force_style='PrimaryColour=&H000000,SecondaryColour=&H000000,OutlineColour=&H0000FF,BackColour=&H000000,BorderStyle=3,Outline=1,Shadow=0,MarginV=25,Fontname=Arial,Fontsize=16,Alignment=2'" output.mp4
+
+
+        ffmpeg -i input.mp4 -vf "subtitles=output.srt:force_style='PrimaryColour=&H000000,OutlineColour=&Hd1f9ff,BackColour=&H000000,BorderStyle=3,Outline=1,Shadow=0,MarginV=25,Fontname=Arial,Fontsize=16,Alignment=2'" output.mp4

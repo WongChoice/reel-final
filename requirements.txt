@@ -1,0 +1,5 @@
+Flask
+gunicorn
+pytube
+python-slugify
+openai-whisper

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Subtitle Overlay</title>
+</head>
+<body>
+    <h1>Video Subtitle Overlay</h1>
+    <form method="POST">
+        <label for="youtube_url">YouTube URL:</label>
+        <input type="text" id="youtube_url" name="youtube_url">
+        <br>
+        <label for="color">Subtitle Outline Color:</label>
+        <input type="color" id="color" name="color">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <br>
+    <div>
+        {% if video_path %}
+            <video width="360" height="640" controls>
+                <source src="{{ url_for('static', filename=video_path) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <a href="{{ url_for('edit_subtitle', subtitle_path=subtitle_path) }}">Edit Subtitles</a>
+        {% endif %}
+    </div>
+</body>
+</html>
